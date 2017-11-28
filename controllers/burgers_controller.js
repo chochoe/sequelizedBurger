@@ -1,7 +1,11 @@
 var express = require("express");
 
 var router = express.Router();
-var burger = require("../models/burger");
+var burger = require("../models");
+
+var sequelizeConnection = models.sequelize;
+
+sequelizeConnection.sync();
 
 // get route -> index
 router.get("/", function(req, res) {
